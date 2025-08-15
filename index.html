@@ -20,12 +20,15 @@
          within the single page so users can quickly jump between sections. -->
     <header class="header">
       <div class="container header-container">
+        <!-- Logo at the project root for compatibility across hosting environments -->
         <img src="logo.jpg" alt="The Summit Group logo" class="logo" />
         <nav class="nav">
           <ul class="nav-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#process">Process</a></li>
             <li><a href="#values">Our Values</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact" class="button button-outline">Get in Touch</a></li>
@@ -42,16 +45,17 @@
       <div class="hero-content">
         <div class="hero-text">
           <h1>
-            Turn Your Property Stress Into <span class="highlight">Success</span>
+            Turn Your Property Stress Into <span class="highlight">Success</span><br />
+            with <span class="highlight">The Summit Group</span>
           </h1>
           <p>
-            The Summit Group makes real estate wholesaling simple. We'll help
-            you sell fast, fair and hassle‑free.
+            At The Summit Group, we make real estate wholesaling simple. We'll help you sell fast,
+            fair and hassle‑free.
           </p>
           <a href="#contact" class="button button-primary">Get Your Cash Offer</a>
         </div>
         <div class="hero-image">
-            <!-- Update path to illustration now that images are stored in the root of the repository -->
+            <!-- Reference the illustration at the project root -->
             <img src="illustration1.png" alt="People discussing a home sale" />
         </div>
       </div>
@@ -116,11 +120,64 @@
       </div>
     </section>
 
+    <!-- Process section explains how our service works -->
+    <section id="process" class="process">
+      <div class="container">
+        <h2>How Our Process Works</h2>
+        <div class="process-grid">
+          <div class="process-item">
+            <div class="process-icon">
+              <!-- Phone icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92V21a2 2 0 0 1-2.18 2 19.78 19.78 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.78 19.78 0 0 1 1 4.18 2 2 0 0 1 3 2h4.09a2 2 0 0 1 2 1.72 12.07 12.07 0 0 0 .57 2.57 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.51-1.51a2 2 0 0 1 2.11-.45 12.07 12.07 0 0 0 2.57.57A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <h3>Connect With Us</h3>
+            <p>Reach out to The Summit Group for a free, no‑obligation consultation about your property.</p>
+          </div>
+          <div class="process-item">
+            <div class="process-icon">
+              <!-- File-check icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <path d="M9 15l2 2 4-4" />
+              </svg>
+            </div>
+            <h3>Get Your Offer</h3>
+            <p>We'll review your property and send you a fair cash offer—no fees or commissions.</p>
+          </div>
+          <div class="process-item">
+            <div class="process-icon">
+              <!-- Clock icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h3>Choose Your Closing Date</h3>
+            <p>You pick the date that works best for you—often in as little as seven days.</p>
+          </div>
+          <div class="process-item">
+            <div class="process-icon">
+              <!-- Home icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11l9-9 9 9" />
+                <path d="M9 21V13h6v8" />
+              </svg>
+            </div>
+            <h3>Move On</h3>
+            <p>Close on your terms and move forward with peace of mind—no repairs or hassles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Values section conveys the ethos of the company. Use cards with subtle
          shadows and alternating layouts for visual interest. -->
     <section id="values" class="values">
       <div class="container">
-        <h2>What Sets Us Apart</h2>
+        <h2>What Sets The Summit Group Apart</h2>
         <div class="values-cards">
           <div class="card">
             <h3>Seller‑First Solutions</h3>
@@ -133,6 +190,42 @@
           <div class="card">
             <h3>Trusted Partners</h3>
             <p>We’ve built a reputation on trust and follow through on every promise we make.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About section shares our story and experience -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About The Summit Group</h2>
+        <div class="about-content">
+          <p>
+            The Summit Group is a family‑owned real estate wholesaler built on trust,
+            transparency and a commitment to our community. We’ve spent years helping
+            homeowners just like you unlock the true value of their property without the
+            headaches of traditional sales. By focusing on fair cash offers and flexible
+            timelines, we’ve become a trusted partner for sellers across our region.
+          </p>
+          <p>
+            Whether you’re dealing with an inherited property, facing relocation or simply
+            want to move on quickly, The Summit Group will guide you every step of the way.
+            Our knowledgeable team understands local market dynamics and treats every
+            client’s situation with empathy and respect.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-number">200+</div>
+              <div class="stat-label">Homes Purchased</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">10</div>
+              <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">5.0★</div>
+              <div class="stat-label">Average Rating</div>
+            </div>
           </div>
         </div>
       </div>
@@ -192,11 +285,20 @@
       </div>
     </section>
 
+    <!-- Call to action section encourages visitors to take the next step -->
+    <section id="cta" class="cta">
+      <div class="container">
+        <h2>Ready to Get Your Cash Offer?</h2>
+        <p>Let The Summit Group make your selling experience smooth and stress‑free.</p>
+        <a href="#contact" class="button button-primary">Request Offer Now</a>
+      </div>
+    </section>
+
     <!-- Contact section collects the seller's information. All fields use a
          simple style that stands out against the colored background. -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2>Get in Touch</h2>
+        <h2>Get in Touch with The Summit Group</h2>
         <form class="contact-form">
           <div class="form-row">
             <label>

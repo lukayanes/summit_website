@@ -230,6 +230,43 @@ a:hover { text-decoration: underline; }
   font-size: 0.95rem;
 }
 
+/* Process section */
+.process {
+  padding: 4rem 0;
+  background-color: var(--colour-accent);
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.process-item {
+  background-color: var(--colour-white);
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.process-icon {
+  background-color: var(--colour-accent);
+  color: var(--colour-primary);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+}
+.process h3 {
+  margin-bottom: 0.5rem;
+  color: var(--colour-primary);
+}
+.process p {
+  color: var(--colour-muted);
+  font-size: 0.95rem;
+}
 /* Testimonials */
 .testimonials {
   padding: 4rem 0;
@@ -359,6 +396,58 @@ a:hover { text-decoration: underline; }
   align-self: flex-start;
 }
 
+/* About section */
+.about {
+  padding: 4rem 0;
+  background-color: var(--colour-accent);
+}
+.about-content p {
+  margin-bottom: 1rem;
+  color: var(--colour-text);
+  max-width: 800px;
+}
+.about-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+.stat {
+  text-align: center;
+  flex: 1 1 200px;
+}
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--colour-primary);
+  margin-bottom: 0.3rem;
+}
+.stat-label {
+  font-size: 1rem;
+  color: var(--colour-muted);
+}
+
+/* CTA section */
+.cta {
+  padding: 3.5rem 0;
+  background-color: var(--colour-primary);
+  color: var(--colour-accent);
+  text-align: center;
+}
+.cta h2 {
+  margin-bottom: 1rem;
+  color: var(--colour-accent);
+}
+.cta p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--colour-accent);
+}
+.cta .button-primary {
+  font-size: 1rem;
+}
+
 /* Footer styles */
 .footer {
   background-color: var(--colour-primary);
@@ -406,5 +495,12 @@ a:hover { text-decoration: underline; }
   }
   .hero-text {
     margin: 0 auto;
+  }
+
+  /* Stack about statistics vertically on small screens */
+  .about-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
   }
 }
