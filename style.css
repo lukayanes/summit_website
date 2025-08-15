@@ -1,0 +1,379 @@
+/*
+  Base stylesheet for the Summit Group landing page. A neutral reset and
+  consistent typographic scale help ensure the design looks polished on
+  different devices. CSS variables at the top define the colour palette,
+  allowing you to adjust the look of the site by updating a few values.
+*/
+
+/* Colour palette inspired by the uploaded logo. */
+:root {
+  --colour-primary: #0e2d44;      /* dark navy for backgrounds and headers */
+  --colour-secondary: #17476b;    /* muted blue for accents */
+  --colour-accent: #f5f6f7;       /* very light backdrop for content sections */
+  --colour-highlight: #275b86;    /* mid‑tone blue for highlighted text */
+  --colour-text: #2c3e50;         /* dark grey for body copy */
+  --colour-white: #ffffff;
+  --colour-muted: #708099;        /* muted grey for secondary text */
+}
+
+/* Reset some default properties. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--colour-text);
+  line-height: 1.6;
+  background-color: var(--colour-accent);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--colour-primary);
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.6rem; margin-bottom: 0.5em; }
+h2 { font-size: 1.8rem; margin-bottom: 1em; text-align: center; }
+h3 { font-size: 1.3rem; margin-bottom: 0.5em; }
+
+p { margin-bottom: 0.75em; }
+
+a { color: var(--colour-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Container keeps content centered with a maximum width. */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styling */
+.header {
+  background-color: var(--colour-white);
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-list li a {
+  font-weight: 500;
+  color: var(--colour-text);
+  transition: color 0.2s ease;
+}
+.nav-list li a:hover {
+  color: var(--colour-primary);
+}
+.button-outline {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--colour-primary);
+  border-radius: 25px;
+  color: var(--colour-primary);
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.button-outline:hover {
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+}
+
+/* Generic button styles */
+.button {
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+.button-primary {
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+  border: 2px solid var(--colour-primary);
+}
+.button-primary:hover {
+  background-color: var(--colour-secondary);
+  border-color: var(--colour-secondary);
+}
+
+/* Hero section styles */
+.hero {
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+  padding: 4rem 0 5rem;
+  text-align: center;
+}
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--colour-white);
+}
+.hero .highlight {
+  color: var(--colour-highlight);
+}
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--colour-accent);
+}
+
+/* Benefits section */
+.benefits {
+  padding: 4rem 0;
+  background-color: var(--colour-accent);
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.benefit-item {
+  background-color: var(--colour-white);
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.benefit-item .icon {
+  background-color: var(--colour-accent);
+  color: var(--colour-primary);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+}
+.benefit-item h3 {
+  margin-bottom: 0.5rem;
+  color: var(--colour-primary);
+}
+.benefit-item p {
+  color: var(--colour-muted);
+  font-size: 0.95rem;
+}
+
+/* Values section */
+.values {
+  padding: 4rem 0;
+}
+.values-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.values .card {
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+}
+.values .card h3 {
+  color: var(--colour-accent);
+}
+.values .card p {
+  color: var(--colour-accent);
+  font-size: 0.95rem;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 4rem 0;
+  background-color: var(--colour-accent);
+}
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.testimonial-card {
+  background-color: var(--colour-white);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+.testimonial-card .quote {
+  font-style: italic;
+  color: var(--colour-text);
+  margin-bottom: 1rem;
+}
+.testimonial-card .author {
+  font-weight: 600;
+  color: var(--colour-primary);
+}
+
+/* FAQ styles */
+.faq {
+  padding: 4rem 0;
+}
+.faq-item + .faq-item {
+  margin-top: 1rem;
+}
+.accordion {
+  background-color: var(--colour-white);
+  color: var(--colour-primary);
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion::after {
+  content: '\002B';
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--colour-secondary);
+}
+.accordion.active::after {
+  content: '\2212';
+}
+.panel {
+  background-color: var(--colour-white);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 8px 8px;
+  padding: 0 1.5rem;
+}
+.panel p {
+  padding: 1rem 0;
+  color: var(--colour-muted);
+}
+
+/* Contact section */
+.contact {
+  padding: 4rem 0;
+  background-color: var(--colour-primary);
+  color: var(--colour-accent);
+}
+.contact h2 {
+  text-align: center;
+  color: var(--colour-accent);
+}
+.contact-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact-form label {
+  display: block;
+  font-weight: 500;
+  color: var(--colour-accent);
+  font-size: 0.95rem;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: none;
+  border-bottom: 2px solid var(--colour-accent);
+  background-color: transparent;
+  color: var(--colour-accent);
+  font-size: 1rem;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(245, 246, 247, 0.7);
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.contact-form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.contact-form .form-row label {
+  flex: 1 1 250px;
+}
+.contact .button-primary {
+  align-self: flex-start;
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--colour-primary);
+  color: var(--colour-accent);
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+.footer a {
+  color: var(--colour-highlight);
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-list {
+    gap: 0.8rem;
+  }
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
