@@ -7,13 +7,20 @@
 
 /* Colour palette inspired by the uploaded logo. */
 :root {
-  --colour-primary: #0e2d44;      /* dark navy for backgrounds and headers */
-  --colour-secondary: #17476b;    /* muted blue for accents */
-  --colour-accent: #f5f6f7;       /* very light backdrop for content sections */
-  --colour-highlight: #275b86;    /* mid‑tone blue for highlighted text */
-  --colour-text: #2c3e50;         /* dark grey for body copy */
+  /*
+    Updated colour palette to better match The Summit Group logo.  
+    The primary colour is a rich navy, secondary is a muted blue for accents,  
+    accent is a warm off‑white for content backgrounds, highlight is a mid‑tone blue  
+    used sparingly for emphasised text and links, text is a deep blue for readability,  
+    and muted is a soft grey for secondary copy.  
+  */
+  --colour-primary: #0f2e4d;      /* dark navy for backgrounds and headers */
+  --colour-secondary: #274a71;    /* muted blue for accents */
+  --colour-accent: #f7f5f1;       /* light beige backdrop for content sections */
+  --colour-highlight: #1c528c;    /* mid‑tone blue for highlighted text */
+  --colour-text: #152a3b;         /* deep blue for body copy */
   --colour-white: #ffffff;
-  --colour-muted: #708099;        /* muted grey for secondary text */
+  --colour-muted: #788090;        /* muted grey for secondary text */
 }
 
 /* Reset some default properties. */
@@ -72,7 +79,8 @@ a:hover { text-decoration: underline; }
 }
 
 .logo {
-  height: 48px;
+  /* Increase the size of the logo so it stands out more prominently in the header. */
+  height: 68px;
   width: auto;
 }
 
