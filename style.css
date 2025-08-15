@@ -131,8 +131,26 @@ a:hover { text-decoration: underline; }
   text-align: center;
 }
 .hero-content {
-  max-width: 800px;
+  /* Use a responsive grid to place text and illustration side by side. */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
+  text-align: left;
+}
+
+/* Ensure the text doesn't stretch too wide */
+.hero-text {
+  max-width: 600px;
+}
+
+/* Illustration styling */
+.hero-image img {
+  width: 100%;
+  height: auto;
 }
 .hero h1 {
   font-size: 3rem;
@@ -375,5 +393,18 @@ a:hover { text-decoration: underline; }
   }
   h2 {
     font-size: 1.5rem;
+  }
+
+  /* Stack hero columns on smaller screens */
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-image {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+  .hero-text {
+    margin: 0 auto;
   }
 }
