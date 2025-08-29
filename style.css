@@ -601,6 +601,17 @@ a:hover { text-decoration: underline; }
   /* IMPORTANT: undo any earlier “hide all except last-child” rules */
   .nav .nav-list li { display: block; }
 }
+/* Style the contact form submit button */
+.contact-form .button-primary {
+  display: block;            /* center by default */
+  margin: 1.5rem auto 0;     /* space above and center horizontally */
+  padding: 1rem 2rem;        /* make it larger */
+  font-size: 1.1rem;         /* bigger text */
+  font-weight: 700;          /* bold */
+  border-radius: 999px;      /* pill-shaped */
+  text-align: center;
+  min-width: 220px;          /* consistent size */
+}
 
 
 
