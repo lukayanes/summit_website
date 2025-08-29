@@ -366,50 +366,42 @@
     <!-- Hidden iframe prevents page navigation on submit -->
     <iframe name="resimpli_sink" style="display:none;"></iframe>
 
-    <form
-      action="https://dashboard.resimpli.com/public/web-form?webFormLink=685ca44636d0658cabeb40ed"
-      method="POST"
-      target="_blank"
-      class="contact-form"
-      id="lead-form"
-      novalidate
-    >
-      <div class="grid">
-        <div class="form-group">
-          <label for="name">First and Last Name</label>
-          <input id="name" type="text" name="name" placeholder="John Doe" required>
-        </div>
+    <form action="https://dashboard.resimpli.com/public/web-form?webFormLink=685ca44636d0658cabeb40ed"
+      method="POST" target="_blank" class="contact-form" id="lead-form">
 
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input id="phone" type="tel" name="phone" placeholder="(123) 456-7890" required>
-        </div>
+  <!-- Some CRMs want split names; try this first -->
+  <div class="grid">
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input id="first_name" type="text" name="first_name" required>
+    </div>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="john@example.com" required>
-        </div>
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input id="last_name" type="text" name="last_name" required>
+    </div>
 
-        <div class="form-group form-group--full">
-          <label for="address">Property Address</label>
-          <input id="address" type="text" name="address" placeholder="123 Main St, City, ST" required>
-        </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel" name="phone" required>
+    </div>
 
-        <div class="form-group">
-          <label for="updates">Any updates in the past 5 years?</label>
-          <textarea id="updates" name="updates" placeholder="Updated the kitchen, replaced the roof…"></textarea>
-        </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required>
+    </div>
 
-        <div class="form-group">
-          <label for="hurdles">Anything keeping you from selling?</label>
-          <textarea id="hurdles" name="hurdles" placeholder="I'm waiting for…"></textarea>
-        </div>
+    <div class="form-group form-group--full">
+      <label for="address">Property Address</label>
+      <input id="address" type="text" name="address" required>
+    </div>
 
-        <div class="form-group">
-          <label for="offer">Given the condition of the home, what is a fair as-is offer?</label>
-          <input id="offer" type="text" name="offer" placeholder="$0">
-        </div>
-      </div>
+    <!-- Optional notes (ignored unless custom fields exist in REsimpli) -->
+    <div class="form-group form-group--full">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" placeholder="Updates, hurdles, fair as-is offer…"></textarea>
+    </div>
+  </div>
 
       <!-- Required defaults for REsimpli -->
       <input type="hidden" name="lead_source" value="Website">
