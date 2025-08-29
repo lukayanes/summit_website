@@ -535,3 +535,33 @@ a:hover { text-decoration: underline; }
   .nav .nav-list li a { … }
   .nav .nav-list li:last-child a.button-outline { … }
 }
+/* Mobile Header Fix */
+@media (max-width: 768px) {
+  /* shrink header spacing */
+  .header .header-container {
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+  }
+
+  /* smaller logo */
+  .logo {
+    height: 36px;
+    width: auto;
+  }
+
+  /* hide all nav links except last one (Get in Touch) */
+  .nav .nav-list li {
+    display: none;
+  }
+  .nav .nav-list li:last-child {
+    display: inline-block;
+  }
+
+  /* make "Get in Touch" button clean on mobile */
+  .nav .button.button-outline {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+  }
+}
+
