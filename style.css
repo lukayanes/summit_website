@@ -649,6 +649,20 @@ a:hover { text-decoration: underline; }
   color: #fff;
   transform: scale(1.05);
 }
-
+/* Style the embedded REsimpli form */
+.resimpli-embed {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.resimpli-embed iframe {
+  width: 100%;
+  min-height: 1000px;  /* adjust to match their form’s height */
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+}
+@media (max-width: 768px) {
+  .resimpli-embed iframe { min-height: 1100px; }
+}
 
 
