@@ -298,45 +298,53 @@
     <!-- Contact section collects the seller's information. All fields use a
          simple style that stands out against the colored background. -->
     <section id="contact" class="contact">
-      <div class="container">
-        <h2>Get in Touch with The Summit Group</h2>
-        <form action="https://dashboard.resimpli.com/public/web-form?webFormLink=685ca44636d0658cabeb40ed" method="POST">
-          <div class="form-row">
-            <label>
-              First and Last Name
-              <input type="text" name="name" placeholder="John Doe" required />
-            </label>
-            <label>
-              Phone Number
-              <input type="tel" name="phone" placeholder="(123) 456-7890" required />
-            </label>
-            <label>
-          </div>
-              Email
-              <input type="email" name="email" placeholder="(123) 456‑7890" required />
-            </label>
-          <label>
-            Property Address
-            <input type="text" name="address" placeholder="123 Main St, City, State" required />
-          </label>
-          <div class="form-row">
-            <label>
-              Any updates in the past 5 years?
-              <textarea name="updates" placeholder="Updated the kitchen, replaced the roof..."></textarea>
-            </label>
-            <label>
-              Anything keeping you from selling?
-              <textarea name="hurdles" placeholder="I'm waiting for..."></textarea>
-            </label>
-            <label>
-              Given the condition of the home, what is a fair as‑is offer?
-              <input type="text" name="offer" placeholder="$0" />
-            </label>
-          </div>
-          <button type="submit" class="button button-primary">Submit</button>
-        </form>
+  <div class="container">
+    <h2>Get in Touch with The Summit Group</h2>
+    <p class="contact-subtitle">Tell us a bit about your property and how we can reach you.</p>
+
+    <form action="https://dashboard.resimpli.com/public/web-form?webFormLink=685ca44636d0658cabeb40ed" method="POST" class="contact-form" novalidate>
+      <div class="grid">
+        <div class="form-group">
+          <label for="name">First and Last Name</label>
+          <input id="name" type="text" name="name" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="tel" name="phone" placeholder="(123) 456-7890" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="john@example.com" required>
+        </div>
+
+        <div class="form-group form-group--full">
+          <label for="address">Property Address</label>
+          <input id="address" type="text" name="address" placeholder="123 Main St, City, ST" required>
+        </div>
+
+        <div class="form-group">
+          <label for="updates">Any updates in the past 5 years?</label>
+          <textarea id="updates" name="updates" placeholder="Updated the kitchen, replaced the roof…"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="hurdles">Anything keeping you from selling?</label>
+          <textarea id="hurdles" name="hurdles" placeholder="I'm waiting for…"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="offer">Given the condition of the home, what is a fair as-is offer?</label>
+          <input id="offer" type="text" name="offer" placeholder="$0">
+        </div>
       </div>
-    </section>
+
+      <button type="submit" class="button button-primary">Submit</button>
+    </form>
+  </div>
+</section>
+
 
     <!-- Footer contains contact details and a copyright notice. -->
     <footer class="footer">
