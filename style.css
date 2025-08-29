@@ -513,3 +513,25 @@ a:hover { text-decoration: underline; }
     align-items: center;
   }
 }
+/* ===== Mobile-only header polish ===== */
+@media (max-width: 768px) {
+  .header { … }
+  .header .header-container { … }
+  .logo { … }
+  .nav .nav-list { … }
+  .nav .nav-list li:last-child { … }
+  .nav .button.button-outline { … }
+}
+
+/* ===== Optional Hamburger Menu ===== */
+@media (max-width: 768px) {
+  .hamburger { … }
+  .hamburger span { … }
+  .hamburger.open span:nth-child(1) { … }
+  .hamburger.open span:nth-child(2) { … }
+  .hamburger.open span:nth-child(3) { … }
+  .nav .nav-list { … }
+  .nav .nav-list.open { … }
+  .nav .nav-list li a { … }
+  .nav .nav-list li:last-child a.button-outline { … }
+}
