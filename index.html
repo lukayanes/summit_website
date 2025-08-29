@@ -302,7 +302,17 @@
     <h2>Get in Touch with The Summit Group</h2>
     <p class="contact-subtitle">Tell us a bit about your property and how we can reach you.</p>
 
-    <form action="https://dashboard.resimpli.com/public/web-form?webFormLink=685ca44636d0658cabeb40ed" method="POST" class="contact-form" novalidate>
+    <!-- Hidden iframe prevents page navigation on submit -->
+    <iframe name="resimpli_sink" style="display:none;"></iframe>
+
+    <form
+      action="https://dashboard.resimpli.com/public/web-form?webFormLink=685ca44636d0658cabeb40ed"
+      method="POST"
+      target="resimpli_sink"
+      class="contact-form"
+      id="lead-form"
+      novalidate
+    >
       <div class="grid">
         <div class="form-group">
           <label for="name">First and Last Name</label>
@@ -340,10 +350,59 @@
         </div>
       </div>
 
-      <button type="submit" class="button button-primary">Submit</button>
+      <!-- Required defaults for REsimpli -->
+      <input type="hidden" name="lead_source" value="Website">
+      <input type="hidden" name="market" value="Primary Market">
+      <input type="hidden" name="lead_status" value="New Leads">
+
+      <button type="submit" class="button button-primary" id="submit-btn">Submit</button>
+
+      <!-- Success message (hidden until submit completes) -->
+      <p id="form-success" style="display:none; margin-top:0.75rem;">
+        ✅ Thanks! Your info was sent. We’ll reach out shortly.
+      </p>
+      <!-- Error message (shown if something goes wrong) -->
+      <p id="form-error" style="display:none; margin-top:0.5rem;">
+        ⚠️ Hmm, something went wrong. Please try again or call/text us.
+      </p>
     </form>
   </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('lead-form');
+      const successEl = document.getElementById('form-success');
+      const errorEl = document.getElementById('form-error');
+      const submitBtn = document.getElementById('submit-btn');
+      const iframeEl = document.getElementsByName('resimpli_sink')[0];
+
+      form.addEventListener('submit', function () {
+        // Immediate feedback
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting…';
+        successEl.style.display = 'none';
+        errorEl.style.display = 'none';
+
+        // When REsimpli responds (iframe load), show success + reset
+        const onLoad = function () {
+          try {
+            // If REsimpli returns a page, we consider it delivered
+            successEl.style.display = 'block';
+            form.reset();
+          } catch (e) {
+            errorEl.style.display = 'block';
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit';
+          }
+        };
+
+        iframeEl.addEventListener('load', onLoad, { once: true });
+      });
+    })();
+  </script>
 </section>
+
 
 
     <!-- Footer contains contact details and a copyright notice. -->
