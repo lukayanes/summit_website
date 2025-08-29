@@ -622,7 +622,33 @@ a:hover { text-decoration: underline; }
   color: #fff !important;
   border: none !important;
 }
+/* === Contact Form Submit Button with Circle Border === */
+.contact-form .button-primary {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
 
+  /* Circle effect */
+  border: 3px solid #6cb3ff;   /* Summit blue border */
+  border-radius: 50%;          /* makes it a circle/oval */
+  width: 80px;                 /* fixed circle size */
+  height: 80px;
+  line-height: 1.2;
+  background: #fff;            /* white background */
+  color: #6cb3ff;              /* Summit blue text */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.contact-form .button-primary:hover {
+  background: #6cb3ff;
+  color: #fff;
+  transform: scale(1.05);
+}
 
 
 
