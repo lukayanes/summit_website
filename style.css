@@ -602,17 +602,27 @@ a:hover { text-decoration: underline; }
   /* IMPORTANT: undo any earlier “hide all except last-child” rules */
   .nav .nav-list li { display: block; }
 }
-/* Style the contact form submit button */
-.contact-form .button-primary {
-  display: block;            /* center by default */
-  margin: 1.5rem auto 0;     /* space above and center horizontally */
-  padding: 1rem 2rem;        /* make it larger */
-  font-size: 1.1rem;         /* bigger text */
-  font-weight: 700;          /* bold */
-  border-radius: 999px;      /* pill-shaped */
-  text-align: center;
-  min-width: 220px;          /* consistent size */
+/* === Force bigger, centered Submit button on the contact form === */
+.contact .contact-form button.button.button-primary,
+.contact .contact-form input[type="submit"].button-primary,
+.contact .contact-form .button.button-primary {
+  display: block !important;         /* center-able */
+  margin: 1.5rem auto 0 !important;  /* centers horizontally */
+  padding: 1rem 2rem !important;     /* bigger click target */
+  font-size: 1.15rem !important;     /* larger text */
+  font-weight: 800 !important;       /* extra bold */
+  min-width: 240px !important;       /* consistent presence */
+  border-radius: 999px !important;   /* pill shape */
+  text-align: center !important;
 }
+
+/* Optional: make it pop with brand color (adjust as needed) */
+.contact .contact-form .button-primary {
+  background: #6cb3ff !important;    /* Summit baby-blue (example) */
+  color: #fff !important;
+  border: none !important;
+}
+
 
 
 
