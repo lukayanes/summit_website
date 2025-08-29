@@ -363,15 +363,89 @@
     <h2>Get in Touch with The Summit Group</h2>
     <p class="contact-subtitle">Tell us a bit about your property and how we can reach you.</p>
 
-    <div class="resimpli-embed">
-  <iframe
-    src="https://dashboard.resimpli.com/public/web-form?webFormLink=685ca44636d0658cabeb40ed"
-    title="REsimpli Lead Form"
-    loading="lazy"
-    frameborder="0"
-  ></iframe>
-</div>
+    <form id="lead-form" class="contact-form" novalidate>
+  <div class="grid">
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input id="first_name" type="text" name="first_name" placeholder="John" required>
+    </div>
 
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input id="last_name" type="text" name="last_name" placeholder="Doe" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel" name="phone" placeholder="(123) 456-7890" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="john@example.com" required>
+    </div>
+
+    <div class="form-group form-group--full">
+      <label for="address">Property Address</label>
+      <input id="address" type="text" name="address" placeholder="123 Main St, City, ST" required>
+    </div>
+
+    <!-- Optional notes -->
+    <div class="form-group form-group--full">
+      <label for="notes">Anything we should know?</label>
+      <textarea id="notes" name="notes" placeholder="Updates, hurdles, fair as-is offer…"></textarea>
+    </div>
+  </div>
+
+  <!-- Hidden defaults (adjust to your REsimpli setup; may need IDs) -->
+  <input type="hidden" name="lead_source" value="Website">
+  <input type="hidden" name="market" value="Primary Market">
+  <input type="hidden" name="lead_status" value="New Leads">
+
+  <button type="submit" class="button button-primary" id="submit-btn">Submit</button>
+
+  <p id="form-success" style="display:none; margin-top:0.75rem;">
+    ✅ Thanks! Your info was sent. We’ll reach out shortly.
+  </p>
+  <p id="form-error" style="display:none; margin-top:0.5rem;">
+    ⚠️ Something went wrong. Please try again or call/text us.
+  </p>
+</form>
+
+<script>
+  (function () {
+    const form = document.getElementById('lead-form');
+    const btn = document.getElementById('submit-btn');
+    const ok = document.getElementById('form-success');
+    const err = document.getElementById('form-error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      ok.style.display = 'none'; err.style.display = 'none';
+      btn.disabled = true; btn.textContent = 'Submitting…';
+
+      try {
+        const res = await fetch('https://workers-playground-orange-flower-3198.aubrey.workers.dev/', {
+          method: 'POST',
+          body: new FormData(form),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          ok.style.display = 'block';
+          form.reset();
+        } else {
+          err.style.display = 'block';
+        }
+      } catch (e) {
+        err.style.display = 'block';
+      } finally {
+        btn.disabled = false; btn.textContent = 'Submit';
+      }
+    });
+  })();
+</script>
+
+    
 </section>
 
 
