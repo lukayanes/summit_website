@@ -560,7 +560,7 @@ a:hover { text-decoration: underline; }
     padding: 0.6rem 1rem;
     position: relative;                /* anchor the dropdown */
   }
-  .logo { height: 34px; width: auto; }
+  .logo { height: 65px; width: auto; }
 
   /* show burger, hide full nav by default */
   .hamburger { display: inline-flex; justify-content: center; align-items: center; }
