@@ -518,7 +518,8 @@ a:hover { text-decoration: underline; }
   .header { … }
   .header .header-container { … }
   .logo {
-    height: 55px;  /* a bit smaller but still larger than before */
+    height: 65px;  /* a bit smaller but still larger than before */
+    width: auto;
   }
   .nav .nav-list { … }
   .nav .nav-list li:last-child { … }
