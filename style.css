@@ -517,7 +517,9 @@ a:hover { text-decoration: underline; }
 @media (max-width: 768px) {
   .header { … }
   .header .header-container { … }
-  .logo { … }
+  .logo {
+    height: 55px;  /* a bit smaller but still larger than before */
+  }
   .nav .nav-list { … }
   .nav .nav-list li:last-child { … }
   .nav .button.button-outline { … }
