@@ -499,14 +499,35 @@
       });
     </script>
     <script>
-  const burger = document.querySelector('.hamburger');
-  const nav = document.querySelector('.nav .nav-list');
-  if (burger && nav) {
+  (function () {
+    const burger = document.querySelector('.hamburger');
+    const navList = document.getElementById('mobile-nav');
+
+    if (!burger || !navList) return;
+
+    function closeMenu() {
+      navList.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+
     burger.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      burger.classList.toggle('open');
+      const isOpen = navList.classList.toggle('open');
+      burger.classList.toggle('open', isOpen);
+      burger.setAttribute('aria-expanded', String(isOpen));
     });
-  }
+
+    // Close when a link is tapped
+    navList.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') closeMenu();
+    });
+
+    // Close on resize back to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+  })();
 </script>
+
   </body>
 </html>
