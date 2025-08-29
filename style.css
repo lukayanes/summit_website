@@ -522,46 +522,83 @@ a:hover { text-decoration: underline; }
   .nav .nav-list li:last-child { … }
   .nav .button.button-outline { … }
 }
-
-/* ===== Optional Hamburger Menu ===== */
-@media (max-width: 768px) {
-  .hamburger { … }
-  .hamburger span { … }
-  .hamburger.open span:nth-child(1) { … }
-  .hamburger.open span:nth-child(2) { … }
-  .hamburger.open span:nth-child(3) { … }
-  .nav .nav-list { … }
-  .nav .nav-list.open { … }
-  .nav .nav-list li a { … }
-  .nav .nav-list li:last-child a.button-outline { … }
+/* ===== Hamburger menu (mobile) ===== */
+.hamburger {
+  display: none;               /* hidden on desktop */
+  width: 40px; height: 36px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin-left: auto;           /* push it to the right of the logo */
+  cursor: pointer;
 }
-/* Mobile Header Fix */
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #0f1a2a;         /* dark navy to match your theme */
+  transition: transform .2s ease, opacity .2s ease;
+}
+.hamburger span + span { margin-top: 6px; }
+
+/* X animation when open */
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile header + menu panel */
 @media (max-width: 768px) {
-  /* shrink header spacing */
+  .header { position: sticky; top: 0; z-index: 1000; background: #fff; }
   .header .header-container {
-    padding: 0.5rem 1rem;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr;   /* logo | rest */
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    position: relative;                /* anchor the dropdown */
   }
+  .logo { height: 34px; width: auto; }
 
-  /* smaller logo */
-  .logo {
-    height: 36px;
-    width: auto;
-  }
+  /* show burger, hide full nav by default */
+  .hamburger { display: inline-flex; justify-content: center; align-items: center; }
 
-  /* hide all nav links except last one (Get in Touch) */
-  .nav .nav-list li {
+  .nav { margin-left: auto; }          /* keep nav area aligned right */
+
+  /* base: hide the list on mobile */
+  .nav .nav-list {
     display: none;
   }
-  .nav .nav-list li:last-child {
-    display: inline-block;
+
+  /* dropdown panel when open */
+  .nav .nav-list.open {
+    display: flex;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.6rem 1rem 0.8rem;
+  }
+  .nav .nav-list.open li { display: block; }
+  .nav .nav-list.open a {
+    display: block;
+    padding: 0.55rem 0;
   }
 
-  /* make "Get in Touch" button clean on mobile */
-  .nav .button.button-outline {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.9rem;
+  /* keep the CTA styled nicely inside the dropdown too */
+  .nav .nav-list.open li:last-child a.button-outline {
+    border: 1px solid rgba(0,0,0,0.12);
     border-radius: 999px;
+    text-align: center;
+    margin-top: 0.25rem;
+    padding: 0.55rem 0.9rem;
   }
+
+  /* IMPORTANT: undo any earlier “hide all except last-child” rules */
+  .nav .nav-list li { display: block; }
 }
+
+
 
