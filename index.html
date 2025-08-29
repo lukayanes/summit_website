@@ -498,5 +498,15 @@
         });
       });
     </script>
+    <script>
+  const burger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav .nav-list');
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  }
+</script>
   </body>
 </html>
