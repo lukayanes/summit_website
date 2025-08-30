@@ -363,85 +363,55 @@
     <h2>Get in Touch with The Summit Group</h2>
     <p class="contact-subtitle">Tell us a bit about your property and how we can reach you.</p>
 
-   <form action="https://dashboard.resimpli.com/public/web-form?webFormLink=685ca44636d0658cabeb40ed"
-      method="POST" target="_blank" class="contact-form" id="lead-form">
-  <div class="grid">
-    <div class="form-group">
-      <label for="first_name">First Name</label>
-      <input id="first_name" type="text" name="first_name" required>
-    </div>
+   
+<form action="https://dashboard.resimpli.com/public/web-form?webFormLink=685ca44636d0658cabeb40ed"
+      method="POST" target="_blank" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" id="tform">
 
-    <div class="form-group">
-      <label for="last_name"> Last Name</label>
-      <input id="last_name" type="text" name="last_name" required>
-    </div>
+  <!-- Try both split-name and single-name (send all) -->
+  <label>First Name <input name="first_name" required></label><br>
+  <label>Last Name <input name="last_name" required></label><br>
+  <label>Full Name <input name="name"></label><br>
 
-    <div class="form-group">
-      <label for="phone">Phone</label>
-      <input id="phone" type="tel" name="phone" required>
-    </div>
+  <!-- Try both phone keys -->
+  <label>Phone <input name="phone" required></label><br>
+  <label>Primary Phone <input name="primary_phone"></label><br>
 
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input id="email" type="email" name="email" required>
-    </div>
+  <!-- Try both email keys -->
+  <label>Email <input type="email" name="email" required></label><br>
+  <label>Primary Email <input type="email" name="primary_email"></label><br>
 
-    <div class="form-group form-group--full">
-      <label for="address">Property Address</label>
-      <input id="address" type="text" name="address" required>
-    </div>
+  <!-- Try both address keys -->
+  <label>Property Address <input name="address" required></label><br>
+  <label>Property Address (alt) <input name="property_address"></label><br>
 
-    <!-- Optional notes; remove if not needed -->
-    <div class="form-group form-group--full">
-      <label for="notes">Notes</label>
-      <textarea id="notes" name="notes"></textarea>
-    </div>
-  </div>
-
-       <!-- Try LABELS (not IDs) for required REsimpli fields -->
+  <!-- REQUIRED *labels* you told me you want to use -->
   <input type="hidden" name="lead_source" value="Website">
+  <input type="hidden" name="default_number" value="Summit Group Seller Number">  <!-- put the EXACT label shown -->
   <input type="hidden" name="market" value="Primary Market">
   <input type="hidden" name="lead_status" value="New Leads">
-  <input type="hidden" name="default_number" value="Summit Group Seller Number">
 
-  <!-- IMPORTANT: remove the hidden lead_source / market / lead_status -->
-  <button type="submit" class="button button-primary">Submit</button>
+  <button type="submit">Submit</button>
 </form>
 
-
 <script>
-  (function () {
-    const form = document.getElementById('lead-form');
-    const btn = document.getElementById('submit-btn');
-    const ok = document.getElementById('form-success');
-    const err = document.getElementById('form-error');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      ok.style.display = 'none'; err.style.display = 'none';
-      btn.disabled = true; btn.textContent = 'Submitting…';
-
-      try {
-        const res = await fetch('https://workers-playground-orange-flower-3198.aubrey.workers.dev/', {
-          method: 'POST',
-          body: new FormData(form),
-        });
-        const data = await res.json();
-        if (data.ok) {
-          ok.style.display = 'block';
-          form.reset();
-        } else {
-          err.style.display = 'block';
-        }
-      } catch (e) {
-        err.style.display = 'block';
-      } finally {
-        btn.disabled = false; btn.textContent = 'Submit';
-      }
-    });
-  })();
+  // Before submit, mirror the most common variants so REsimpli gets whatever it wants
+  const f = document.getElementById('tform');
+  f.addEventListener('submit', () => {
+    const get = n => f.elements[n]?.value?.trim();
+    // If full name entered, split to first/last as a fallback
+    const full = get('name');
+    if (full && (!get('first_name') || !get('last_name'))) {
+      const parts = full.split(/\s+/);
+      f.elements['first_name'].value ||= parts[0];
+      f.elements['last_name'].value  ||= parts.slice(1).join(' ') || ' ';
+    }
+    // Mirror phone/email/address into alternates
+    f.elements['primary_phone'].value ||= get('phone') || '';
+    f.elements['primary_email'].value ||= get('email') || '';
+    f.elements['property_address'].value ||= get('address') || '';
+    console.log('Submitting payload:', Object.fromEntries(new FormData(f).entries()));
+  });
 </script>
-
     
 </section>
 
