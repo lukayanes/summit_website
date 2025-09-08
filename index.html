@@ -373,42 +373,24 @@
     <p class="contact-subtitle">Tell us a bit about your property and how we can reach you.</p>
 
    
-<!-- REsimpli lead form (posts without leaving the page) -->
-<iframe name="resimpli_sink" style="display:none;"></iframe>
-
-<form action="https://dashboard.resimpli.com/public/web-form?webFormLink=685ca44636d0658cabeb40ed"
-      method="POST" target="resimpli_sink" id="lead-form" class="contact-form">
-
-  <label>First & Last Name
-    <input type="text" name="title" placeholder="Jane Smith" required>
-  </label>
-
-  <label>Phone
-    <input type="tel" name="phoneNumber" placeholder="(555) 555-5555" required>
-  </label>
-
-  <label>Email
-    <input type="email" name="email" placeholder="you@example.com" required>
-  </label>
-
-  <label>Property Address
-    <input type="text" id="addr" name="address" placeholder="123 Main St, City, ST" required>
-    <!-- REsimpli’s live input uses name="item"; mirror it on submit -->
-    <input type="hidden" id="addr_item" name="item">
-  </label>
-
-  <!-- Required fixed choices (use the exact IDs you surfaced) -->
-  <input type="hidden" name="crmQuestionId" value="5a27d3cfc50f175ce762d35a"> <!-- Website -->
-  <input type="hidden" name="webFormMarketId" value="6859e6e1fffc4182abdb31e6"> <!-- Primary Market -->
-  <input type="hidden" name="leadMainStatusId" value="62d6b26a8865ded41d831ece"> <!-- New Leads -->
-  <input type="hidden" name="defaultNumberId" value="685de5177fba579c42375a55"> <!-- Default Number -->
-
-  <!-- If you want to pass any preference question answers, add inputs with those exact name IDs (optional)
-  <input type="text" name="6859e6dffffc4182abdb3109" placeholder="Expected selling price">
-  -->
-
-  <button type="submit" id="submit-btn" class="button button-primary">Submit</button>
-
+<iframe
+    src="https://api.leadconnectorhq.com/widget/form/4d3ccYiWboO6MupyU9a1"
+    style="width:100%;height:1129px;border:none;border-radius:3px"
+    id="inline-4d3ccYiWboO6MupyU9a1" 
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="GHL 1 Form"
+    data-height="1129"
+    data-layout-iframe-id="inline-4d3ccYiWboO6MupyU9a1"
+    data-form-id="4d3ccYiWboO6MupyU9a1"
+    title="GHL 1 Form">
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
   <p id="form-success" style="display:none; margin-top:.75rem;">✅ Thanks! Your info was sent. We’ll reach out shortly.</p>
   <p id="form-error"   style="display:none; margin-top:.5rem;">⚠️ Something went wrong. Please try again or call/text us.</p>
 </form>
