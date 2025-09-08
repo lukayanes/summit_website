@@ -395,38 +395,6 @@
   <p id="form-error"   style="display:none; margin-top:.5rem;">⚠️ Something went wrong. Please try again or call/text us.</p>
 </form>
 
-<script>
-  (function () {
-    const form = document.getElementById('lead-form');
-    const addr = document.getElementById('addr');
-    const addrItem = document.getElementById('addr_item');
-    const ok = document.getElementById('form-success');
-    const err = document.getElementById('form-error');
-    const btn = document.getElementById('submit-btn');
-    const sink = document.getElementsByName('resimpli_sink')[0];
-
-    // Mirror address into "item" so REsimpli's backend sees it either way
-    form.addEventListener('submit', function () {
-      ok.style.display = 'none';
-      err.style.display = 'none';
-      btn.disabled = true;
-      btn.textContent = 'Submitting…';
-
-      addrItem.value = addr.value;
-
-      // When the hidden iframe loads, we treat it as success
-      const onLoad = function () {
-        btn.disabled = false;
-        btn.textContent = 'Submit';
-        ok.style.display = 'block';
-        form.reset();
-      };
-      sink.addEventListener('load', onLoad, { once: true });
-    });
-  })();
-</script>
-
-    
 </section>
 
 
