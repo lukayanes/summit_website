@@ -5094,3 +5094,23 @@ image below text
     height:220px;
   }
 }
+
+
+.hero-logo-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: clamp(260px, 55vw, 660px);
+  opacity: 0.72;
+  animation: logoPop 2.4s ease forwards;
+  z-index: 3;
+  pointer-events: none;
+}
+
+@keyframes logoPop {
+  0%   { opacity: 0;    transform: translateX(-50%) translateY(-50%) scale(0.85); }
+  40%  { opacity: 1;    transform: translateX(-50%) translateY(-50%) scale(1.06); }
+  65%  { opacity: 0.95; transform: translateX(-50%) translateY(-50%) scale(1.0);  }
+  100% { opacity: 0.72; transform: translateX(-50%) translateY(-50%) scale(1.0);  }
+}
