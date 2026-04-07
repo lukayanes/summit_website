@@ -5102,7 +5102,7 @@ image below text
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   width: clamp(260px, 55vw, 660px);
-  opacity: 0.45;
+  opacity: 0.20;
   animation: logoPop 2.4s ease forwards;
   z-index: 3;
   pointer-events: none;
