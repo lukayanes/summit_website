@@ -12,7 +12,7 @@
   --nav-text-strong: #6ec1e4;
 
   --gray: #efefef;
-  --gray-deep: #F26A21;
+  --gray-deep: #1B3A52;
   --purple: #6ec1e4;
   --white: #ffffff;
   --orange: #6ec1e4;
@@ -190,7 +190,7 @@ a{
   padding: 10px 16px;
   border-radius: 10px;
 
-  background: #00A99D;
+  background: #6ec1e4;
   color: #ffffff !important;
 
   font-family: "Unica One", system-ui;
@@ -220,7 +220,7 @@ a{
 
   padding: 10px 16px;
 
-  background: #00A99D;
+  background: #6ec1e4;
   color: #ffffff;
 
   border-radius: 10px;
@@ -283,7 +283,7 @@ a{
   min-width: 260px;
   z-index: 10000;
 
-  background: #00A99D;
+  background: #6ec1e4;
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: 14px;
   padding: 10px;
@@ -511,7 +511,7 @@ html.is-loaded .top-hero::before{
   border-radius: 12px;
   border: none;
   cursor: pointer;
-  background: #00A99D;
+  background: #6ec1e4;
   color: #fff;
   font-weight: 700;
 }
@@ -1349,13 +1349,13 @@ select,
 }
 
 .footer-links a{
-  color: #F26A21;
+  color: #1B3A52;
   text-decoration: none;
   font-size: 14px;
 }
 
 .footer-links a:hover{
-  color: #F26A21;
+  color: #1B3A52;
 }
 
 .copyright-inner{
@@ -1986,7 +1986,7 @@ select,
    FOOTER — SHOWER CO (COMPACT + ONE LINE)
 ================================ */
 :root{
-  --promo-blue: #F26A21;                 /* promo strip orange */
+  --promo-blue: #1B3A52;                 /* promo strip orange */
   --footer-purple: var(--purple);
 }
 
@@ -2096,7 +2096,7 @@ select,
 }
 
 .site-footer a:hover{
-  color: #F26A21;             /* hover to light blue */
+  color: #1B3A52;             /* hover to light blue */
   text-decoration:underline;
 }
 
@@ -2492,7 +2492,7 @@ html, body{
   font-size:44px;
   font-weight:700;
   line-height:1;
-  color:#00A99D; /* purple */
+  color:#6ec1e4; /* purple */
 
   min-width:32px;
 
@@ -2612,7 +2612,7 @@ html, body{
 
     display: block;
 
-    background: #00A99D;
+    background: #6ec1e4;
 
     color: #fff;
 
@@ -2870,7 +2870,7 @@ html, body{
 
   height:3px;
 
-  background:#00A99D;
+  background:#6ec1e4;
 
   display:block;
 
@@ -3043,7 +3043,7 @@ body.menu-open{
 ========================================= */
 
 :root{
-  --brand-purple: #00A99D;
+  --brand-purple: #6ec1e4;
 }
 
 
@@ -3434,7 +3434,7 @@ align-items:center;
 .faq-item summary::after{
 content:"+";
 font-size:22px;
-color:#00A99D;
+color:#6ec1e4;
 }
 
 .faq-item[open] summary::after{
@@ -3676,7 +3676,7 @@ image below text
 
 
 .hero-sub-accent{
-  color: #00A99D;
+  color: #6ec1e4;
 }
 
 
@@ -3699,7 +3699,7 @@ image below text
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: #00A99D;
+  color: #6ec1e4;
 }
 
 .difference-heading{
@@ -3725,7 +3725,7 @@ image below text
   height: 58px;
   padding: 0 34px;
   border-radius: 999px;
-  background: #00A99D;
+  background: #6ec1e4;
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -3767,7 +3767,7 @@ image below text
 }
 
 .cta-purple{
-  color:#00A99D;
+  color:#6ec1e4;
 }
 
 
@@ -3816,7 +3816,7 @@ image below text
   height: 44px;
   margin-bottom: 18px;
   border-radius: 999px;
-  background: #00A99D;
+  background: #6ec1e4;
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -3883,7 +3883,7 @@ image below text
   height:72px;
   border-radius:50%;
   object-fit:cover;
-  border:3px solid #00A99D;
+  border:3px solid #6ec1e4;
 }
 
 .review-person-info{
@@ -3957,7 +3957,7 @@ image below text
   font-weight:700;
   letter-spacing:.12em;
   text-transform:uppercase;
-  color:#00A99D;
+  color:#6ec1e4;
 }
 
 .about-cert-text p{
@@ -4003,7 +4003,7 @@ image below text
 }
 
 .how-benefit span{
-  color:#00A99D;
+  color:#6ec1e4;
   font-size:18px;
   font-weight:700;
   flex-shrink:0;
@@ -4042,7 +4042,7 @@ image below text
   height:44px;
   margin-bottom:18px;
   border-radius:999px;
-  background:#00A99D;
+  background:#6ec1e4;
   color:#fff;
   font-size:14px;
   font-weight:700;
@@ -4845,15 +4845,15 @@ image below text
 }
 
 .contact-info-card h3{
-  color:#00A99D;
+  color:#6ec1e4;
 }
 
 .contact-info-card a:hover{
-  color:#00A99D;
+  color:#6ec1e4;
 }
 
 .contact-help-list li:before{
-  color:#00A99D;
+  color:#6ec1e4;
 }
 
 .contact-info-card{
@@ -4877,12 +4877,12 @@ image below text
 
 .contact-page-form input:focus,
 .contact-page-form textarea:focus{
-  border-color:#00A99D;
+  border-color:#6ec1e4;
   box-shadow:0 0 0 4px rgba(0,169,157,.12);
 }
 
 .contact-page-form button{
-  background:#00A99D;
+  background:#6ec1e4;
 }
 
 .contact-page-form button:hover{
@@ -4934,7 +4934,7 @@ image below text
 }
 
 .faq-question:hover{
-  color:#00A99D;
+  color:#6ec1e4;
 }
 
 .faq-icon{
@@ -4943,7 +4943,7 @@ image below text
   height:34px;
   border-radius:50%;
   background:rgba(0,169,157,.10);
-  color:#00A99D;
+  color:#6ec1e4;
   display:flex;
   align-items:center;
   justify-content:center;
