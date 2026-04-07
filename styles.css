@@ -370,7 +370,7 @@ a{
 
   background:
     linear-gradient(var(--hero-overlay), var(--hero-overlay)),
-    url("./assets/hero.webp") center / cover no-repeat;
+    url("./assets/Sarasota_Hero.webp") center / cover no-repeat;
 
   transform: scale(1.18);
   transition: transform 1100ms cubic-bezier(.2,.9,.2,1);
