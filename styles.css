@@ -902,7 +902,7 @@ height:320px;
 }
 
 .last-cta-photo{
-  background: url("./assets/shoreline-team.webp") center/cover no-repeat;
+  background: url("./assets/lastcta.webp") center/cover no-repeat;
   filter: grayscale(15%);
 }
 
