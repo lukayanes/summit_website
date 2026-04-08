@@ -5160,7 +5160,7 @@ image below text
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: #00A99D;
+  color: #6ec1e4;
   margin: 0 0 18px;
 }
 
@@ -5205,7 +5205,7 @@ image below text
 .mission-stat-number{
   font-family: "Unica One", system-ui;
   font-size: clamp(48px, 5vw, 72px);
-  color: #00A99D;
+  color: #6ec1e4;
   line-height: 1;
 }
 
@@ -5351,7 +5351,7 @@ image below text
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: #00A99D;
+  color: #6ec1e4;
   margin-bottom: 10px;
 }
 
@@ -5390,7 +5390,7 @@ image below text
   padding: 6px 14px;
   border-radius: 999px;
   background: rgba(0,169,157,.08);
-  color: #00A99D;
+  color: #6ec1e4;
   border: 1px solid rgba(0,169,157,.18);
 }
 
