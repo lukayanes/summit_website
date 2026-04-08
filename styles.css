@@ -5114,3 +5114,9 @@ image below text
   65%  { opacity: 0.95; transform: translateX(-50%) translateY(-50%) scale(1.0);  }
   100% { opacity: 0.72; transform: translateX(-50%) translateY(-50%) scale(1.0);  }
 }
+
+.nav-left a:hover,
+.nav-right a:hover,
+.nav-dropbtn:hover{
+  color: var(--purple);
+}
