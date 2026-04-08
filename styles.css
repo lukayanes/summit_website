@@ -304,9 +304,11 @@ a{
 
 .nav-dropmenu a:hover,
 .nav-dropmenu a:focus{
-  background: rgba(255,255,255,0.08);
+  background: rgba(110,193,228,0.15);
+  color: #0F2433;
   outline: none;
 }
+
 
 /* Desktop hover open */
 @media (hover:hover) and (pointer:fine){
