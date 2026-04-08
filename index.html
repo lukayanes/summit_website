@@ -265,7 +265,7 @@
             <input name="fullName" type="text" placeholder="Full Name" required>
             <input name="phone" type="tel" placeholder="Phone Number" required>
             <input name="email" type="email" placeholder="Email Address" required>
-            <input name="address" type="text" placeholder="Property Address" required>
+            <input id="address-input" name="address" type="text" placeholder="Property Address" required>
 
             <textarea name="message" rows="4" placeholder="Tell us about your situation" required></textarea>
 
@@ -686,6 +686,12 @@
 </script>
 
 <script src="./js/main.js" defer></script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpNDWLS_Emyb_Oh41lvO3W39XoZ2P71mw&libraries=places"></script>
+<script>
+  new google.maps.places.Autocomplete(
+    document.getElementById("address-input"),
+    { types:["address"], componentRestrictions:{country:"us"}, fields:["formatted_address"] }
+  );
+</script>
 </body>
 </html>
